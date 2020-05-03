@@ -5,7 +5,11 @@
 const express = require("express"),
 app = express(),
 layouts = require("express-ejs-layouts"),
-mongoose = require("mongoose");
+mongoose = require("mongoose"),
+calendarController = require("./controllers/calendarController"),
+listController = require("./controllers/listController"),
+recipesController = require("./controllers/recipesController");
+
 
 //Set up the required settings
 
@@ -19,12 +23,13 @@ app.use(
 app.use(express.json());
 app.use(layouts);
 app.use(express.static("public"));
+app.use("/static", express.static(__dirname + "public"));
 
 //Routes
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.get("/", recipesController.showPage);
+app.get("/calendar", calendarController.showPage);
+app.get("/list", listController.showPage);
 
 
 //Start listening to the PORT
