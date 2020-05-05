@@ -22,6 +22,11 @@
   color: white;
 }
 
+.nav-link:hover {
+  color: white !important;
+}
+
+
 @media (max-width: 768px) {
   .left-item {
     margin-left: 15%;
@@ -29,4 +34,14 @@
   .right-item {
     margin-right: 15%;
   }
+
+}
+
+/*Recipe Cards */
+
+#recipe-card {
+  border-radius: 2rem !important;
+  background-image: linear-gradient(to top, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);
+  border: none;
+  max-height: 20rem;
 }
