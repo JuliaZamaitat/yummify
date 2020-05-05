@@ -22,40 +22,11 @@
   color: white;
 }
 
-.navbar {
-  background-color: transparent !important;
-  margin-bottom: 0.5%;
-}
-
-.desktop-heading>h1 {
-  padding: 5% 0 0 15%;
-  font-size: 4em !important;
-  font-weight: bold !important;
-}
-.mobile-heading>h1 {
-  display: none;
-}
-
-
 @media (max-width: 768px) {
   .left-item {
     margin-left: 15%;
   }
-
   .right-item {
     margin-right: 15%;
   }
-  .desktop-heading>h1 {
-    display: none;
-  }
-  .mobile-heading {
-    padding: 40px 0 0 40px;
-  }
-
-  .mobile-heading h1 {
-    display:inline;
-    font-size: 3.5em !important;
-    font-weight: bold !important;
-  }
-
 }
