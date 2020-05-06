@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1 class="font-weight-bold my-5 ml-2 display-4">Meine <br class="d-block d-md-none">Lieblinge </h1>
 </div>
@@ -7,11 +8,11 @@
 <div class="card-columns row">
 
   <% recipes.forEach(r => { %>
-    <div id="recipe-card" class="card col-xs-12 col-xl-3 mb-4 mx-3 shadow">
+    <div id="small-card" class="card recipe-card col-xs-12 col-xl-3 mb-4 mx-3 shadow">
       <div class="card-body mt-2">
         <div class="d-flex justify-content-between">
           <h4 class="card-title font-weight-bold"><%= r.title %></h4>
-          <p class="font-weight-bold"><%= r.estimatedTime %></p>
+          <p class="font-weight-bold"><%= r.estimatedTime %> min</p>
         </div>
       </div>
       <div style="height: 8rem; border-radius: 2rem;" class="bg-light my-3 text-center">
@@ -20,44 +21,4 @@
       </div>
     </div>
   <% }); %>
-
-  <!-- <div id="recipe-card" class="card col-xs-12 col-xl-3 mb-4 mx-3 shadow " >
-    <div class="card-body mt-2">
-      <div class="d-flex justify-content-between">
-        <h4 class="card-title font-weight-bold">Beet Root Risotto</h4>
-        <p class="font-weight-bold">40 min</p>
-      </div>
-    </div>
-    <div style="height: 8rem; border-radius: 2rem;" class="bg-light my-3 text-center">
-      <p>Placeholder for image</p>
-      <a href="/calendar" class="stretched-link">See Recipe</a>
-    </div>
-  </div>
-
-  <div id="recipe-card" class="card col-xs-12 col-xl-3 mb-4 mx-3 shadow " >
-    <div class="card-body mt-2">
-      <div class="d-flex justify-content-between">
-        <h4 class="card-title font-weight-bold">Beet Root Risotto</h4>
-        <p class="font-weight-bold">40 min</p>
-      </div>
-    </div>
-    <div style="height: 8rem; border-radius: 2rem;" class="bg-light my-3 text-center">
-      <p>Placeholder for image</p>
-      <a href="/calendar" class="stretched-link">See Recipe</a>
-    </div>
-  </div>
-
-  <div id="recipe-card" class="card col-xs-12 col-xl-3 mb-4 mx-3 shadow " >
-    <div class="card-body mt-2">
-      <div class="d-flex justify-content-between">
-        <h4 class="card-title font-weight-bold">Beet Root Risotto</h4>
-        <p class="font-weight-bold">40 min</p>
-      </div>
-    </div>
-    <div style="height: 8rem; border-radius: 2rem;" class="bg-light my-3 text-center">
-      <p>Placeholder for image</p>
-      <a href="/calendar" class="stretched-link">See Recipe</a>
-    </div>
-  </div> -->
-
 </div>

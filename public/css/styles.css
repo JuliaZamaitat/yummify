@@ -8,6 +8,10 @@
   color: #929292 !important;
 }
 
+.bg-light-blue {
+  background: #EBF7FF !important;
+}
+
 
 /* Navigation */
 .left-item {
@@ -39,9 +43,17 @@
 
 /*Recipe Cards */
 
-#recipe-card {
+.recipe-card {
   border-radius: 2rem !important;
-  background-image: linear-gradient(to top, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);
   border: none;
+}
+
+#small-card {
   max-height: 20rem;
+  background-image: linear-gradient(to top, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);
+}
+
+.card-details{
+  border-radius: 2rem !important;
+  border: none;
 }

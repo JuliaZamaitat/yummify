@@ -1,19 +1,62 @@
 
 <style>
-    #nav {  display: none; }   
+  #nav {  display: none; }
 </style>
 
-<div class="container">
-  <h1 class="font-weight-bold my-5 ml-2 text-center"><%= recipe.title %></h1>
+<div class="container my-5">
+  <div class="row justify-content-between">
+    <a class="btn text-left" href="/"><i class="fa fa-chevron-left fa-2x bg-grey"></i></a>
+    <h2 class="font-weight-bold text-center "><%= recipe.title %></h2>
+    <a class="btn text-left" href="/"><i class="fa fa-edit fa-2x  bg-grey"></i></a>
+  </div>
 </div>
 
 
-  <div id="recipe-card" class="card col-xs-12  shadow " >
-    <div class="card-body mt-2">
-      <div class="d-flex justify-content-between">
 
-        <p class="font-weight-bold"><%= recipe.estimatedTime %></p>
+<div class="bg-light shadow overflow-auto recipe-card" style="height: 45rem" >
+  <div class="card-body mt-2 col-xs-12">
+    <!-- <div class="d-flex flex-column"> -->
+
+<!-- Geschätzte Zeit -->
+<div class="my-4">
+      <p class="font-weight-bold text-center">Zeit einzuplanen: <%= recipe.estimatedTime %> min</p>
+</div>
+<!-- Rezeptlink -->
+      <div class="bg-light-blue card-details py-4 my-4">
+        <p class= "text-center my-0">Link</p>
       </div>
-    </div>
 
+
+<!-- Zutaten -->
+      <div class="bg-light-blue card-details py-2 my-4">
+        <h4 class = "font-weight-bold text-center my-2">Zutaten</h4>
+        <ul class="list-unstyled text-center mb-2">
+          <li>Erste Zutat</li>
+          <li>Zweite Zutat</li>
+          <li>Dritte Zutat</li>
+          <li>Zweite Zutat</li>
+          <li>Dritte Zutat</li>
+          <li>Zweite Zutat</li>
+          <li>Dritte Zutat</li>
+        </ul>
+      </div>
+
+<!-- Zubereitung -->
+      <div class="bg-light-blue card-details py-2 my-4">
+        <h4 class = "font-weight-bold text-center my-2">Zubereitung</h4>
+        <ul class="list-unstyled text-center mb-2">
+          <li>Erster Schritt</li>
+          <li>Zweiter Schritt</li>
+          <li>Dritter Schritt</li>
+          <li>Zweiter Schritt</li>
+          <li>Dritter Schritt</li>
+          <li>Zweiter Schritt</li>
+          <li>Dritter Schritt</li>
+        </ul>
+      </div>
+
+
+
+    </div>
   </div>
+<!-- </div> -->
