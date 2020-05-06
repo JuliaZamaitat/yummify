@@ -40,6 +40,7 @@ app.use("/static", express.static(__dirname + "public"));
 app.get("/", recipesController.getAllRecipes);
 app.get("/calendar", calendarController.showPage);
 app.get("/list", listController.showPage);
+app.get("/:id", recipesController.showRecipe);
 
 
 //Start listening to the PORT

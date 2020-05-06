@@ -21,3 +21,23 @@ exports.getAllRecipes = (req, res) => {
       console.log("promise complete");
     });
 };
+
+exports.showRecipe = (req, res) => {
+  Recipe.findById(req.params.id)
+    .exec()
+    .then((recipe) => {
+      res.render("recipes/show", {
+        recipe: recipe,
+        page_name: 'Recipes'
+      });
+      console.log(req.params.id);
+      //console.log(recipe);
+    })
+    .catch((error) => {
+      console.log(error.message);
+      return [];
+    })
+    .then(() => {
+      console.log("promise complete");
+    });
+};

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose"),
   recipeSchema = mongoose.Schema({
-    title: String
-    // estimatedTime: Integer,
+    title: String,
+    estimatedTime: Number,
     // labels: [{type: mongoose.Schema.Types.ObjectId, ref:"Label"}],
     // ingredients: [String],
     // making: String
