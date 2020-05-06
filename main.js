@@ -11,6 +11,15 @@ listController = require("./controllers/listController"),
 recipesController = require("./controllers/recipesController");
 
 
+//Set up connection to database
+
+mongoose.connect(
+    "mongodb://localhost:27017/yummify",
+    {useNewUrlParser: true}
+  );
+
+mongoose.Promise = global.Promise;
+
 //Set up the required settings
 
 app.set("view engine", "ejs");
@@ -27,7 +36,8 @@ app.use("/static", express.static(__dirname + "public"));
 
 //Routes
 
-app.get("/", recipesController.showPage);
+// app.get("/", recipesController.showPage);
+app.get("/", recipesController.getAllRecipes);
 app.get("/calendar", calendarController.showPage);
 app.get("/list", listController.showPage);
 
