@@ -43,17 +43,12 @@
 
 /*Recipe Cards */
 
-.recipe-card {
-  border-radius: 2rem !important;
-  border: none;
-}
-
 #small-card {
   max-height: 20rem;
   background-image: linear-gradient(to top, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);
 }
 
-.card-details{
+.rounded-card {
   border-radius: 2rem !important;
   border: none;
 }
