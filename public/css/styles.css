@@ -52,3 +52,8 @@
   border-radius: 2rem !important;
   border: none;
 }
+
+.form-control:focus{
+  border-color: #929292 !important;
+  box-shadow: 0 0 0 0.1rem  rgba(213,220,255,1)!important;
+}

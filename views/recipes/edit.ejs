@@ -1,34 +1,31 @@
-
 <style>
   #nav {  display: none; }
 </style>
+<form class="form" action="/<%= recipe.id%>" method="post">
 
-<div class="container my-5">
-  <div class="row justify-content-between">
-    <form class="subscription-form" action="/<%= recipe.id%>" method="post">
-    <h2 class="font-weight-bold text-center "></h2>
-    <input name="title" type="text">
-    <input type="submit"><i class="fa fa-check fa-2x bg-grey"></i></input>
+
+  <div class="container my-5">
+    <div class="text-right">
+      <button type="submit"><i class="fa fa-check fa-2x bg-grey "></i></button>
+    </div>
+    <input name="title" type="text" class="form-control font-weight-bold text-center rounded-card p-4 mt-3" value="<%= recipe.title%>" autofocus >
   </div>
-</div>
 
+  <div class="bg-light shadow overflow-auto rounded-card" style="height: 45rem" >
+    <div class="card-body mt-2 col-xs-12">
 
+      <!-- Geschätzte Zeit -->
+      <div class="my-4 text-center">
+        <p class="font-weight-bold d-inline">Zeit einzuplanen (in Minuten):</p>
+        <input name="estimatedTime" type="text" class="d-inline font-weight-bold text-center rounded-card ml-2 w-25" value="<%= recipe.estimatedTime%>">
+      </div>
 
-<div class="bg-light shadow overflow-auto rounded-card" style="height: 45rem" >
-  <div class="card-body mt-2 col-xs-12">
-    <!-- <div class="d-flex flex-column"> -->
-
-<!-- Geschätzte Zeit -->
-<div class="my-4">
-      <p class="font-weight-bold text-center">Zeit einzuplanen: <%= recipe.estimatedTime %> min</p>
-</div>
-<!-- Rezeptlink -->
+      <!-- Rezeptlink -->
       <div class="bg-light-blue rounded-card py-4 my-4">
         <p class= "text-center my-0">Link</p>
       </div>
 
-
-<!-- Zutaten -->
+      <!-- Zutaten -->
       <div class="bg-light-blue rounded-card py-2 my-4">
         <h4 class = "font-weight-bold text-center my-2">Zutaten</h4>
         <ul class="list-unstyled text-center mb-2">
@@ -42,7 +39,7 @@
         </ul>
       </div>
 
-<!-- Zubereitung -->
+      <!-- Zubereitung -->
       <div class="bg-light-blue rounded-card py-2 my-4">
         <h4 class = "font-weight-bold text-center my-2">Zubereitung</h4>
         <ul class="list-unstyled text-center mb-2">
@@ -55,9 +52,4 @@
           <li>Dritter Schritt</li>
         </ul>
       </div>
-
 </form>
-
-    </div>
-  </div>
-<!-- </div> -->
