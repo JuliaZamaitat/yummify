@@ -41,6 +41,8 @@ app.get("/", recipesController.getAllRecipes);
 app.get("/calendar", calendarController.showPage);
 app.get("/list", listController.showPage);
 app.get("/:id", recipesController.showRecipe);
+app.get("/:id/edit", recipesController.editRecipe);
+app.post("/:id", recipesController.updateRecipe);
 
 
 //Start listening to the PORT

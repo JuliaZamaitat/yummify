@@ -5,9 +5,9 @@
 
 <div class="container my-5">
   <div class="row justify-content-between">
-    <a class="btn text-left" href="/"><i class="fa fa-chevron-left fa-2x bg-grey"></i></a>
-    <h2 class="font-weight-bold text-center "><%= recipe.title %></h2>
-    <a class="btn text-left" href="/<%= recipe.id %>/edit"><i class="fa fa-edit fa-2x  bg-grey"></i></a>
+    <form class="subscription-form" action="/<%= recipe.id%>" method="post">
+    <h2 class="font-weight-bold text-center "><input field type="text>"<%= recipe.title %></input></h2>
+    <input type="submit"><i class="fa fa-check fa-2x bg-grey"></i></input>
   </div>
 </div>
 
@@ -55,7 +55,7 @@
         </ul>
       </div>
 
-
+</form>
 
     </div>
   </div>
