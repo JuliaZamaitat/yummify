@@ -67,7 +67,10 @@ exports.updateRecipe = (req, res) => {
   let recipeId = req.params.id,
   recipeParams = {
     title: req.body.title,
-    estimatedTime: req.body.estimatedTime
+    estimatedTime: req.body.estimatedTime,
+    link: req.body.link,
+    ingredients: req.body.ingredients,
+    making: req.body.making
   };
   Recipe.findByIdAndUpdate(recipeId, {
     $set: recipeParams

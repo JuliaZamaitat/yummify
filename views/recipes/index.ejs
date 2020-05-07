@@ -9,6 +9,7 @@
 
   <% recipes.forEach(r => { %>
     <div id="small-card" class="card rounded-card col-xs-12 col-xl-3 mb-4 mx-3 shadow">
+        <a href="/<%= r._id %>" id="card-links" class="stretched-link"></a>
       <div class="card-body mt-2">
         <div class="d-flex justify-content-between">
           <h4 class="card-title font-weight-bold"><%= r.title %></h4>
@@ -17,7 +18,7 @@
       </div>
       <div style="height: 8rem; border-radius: 2rem;" class="bg-light my-3 text-center">
         <p>Placeholder for image</p>
-        <a href="/<%= r._id %>" class="stretched-link">See Recipe</a>
+
       </div>
     </div>
   <% }); %>
