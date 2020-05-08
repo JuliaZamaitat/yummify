@@ -13,10 +13,10 @@ recipesController = require("./controllers/recipesController");
 
 //Set up connection to database
 
-mongoose.connect(process.env.MONGODB_URI ||
-  "mongodb://localhost:27017/yummify",
-    {useNewUrlParser: true}
-  );
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:27017/yummify",
+  { useNewUrlParser: true, useFindAndModify: false }
+);
 
 mongoose.Promise = global.Promise;
 
