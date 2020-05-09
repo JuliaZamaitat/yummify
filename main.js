@@ -9,13 +9,13 @@ const express = require("express"),
 	calendarController = require("./controllers/calendarController"),
 	listController = require("./controllers/listController"),
 	recipesController = require("./controllers/recipesController"),
-  morgan = require("morgan");
+	morgan = require("morgan");
 
 
 //Set up connection to database, either to test, production or local
 
 if (process.env.NODE_ENV === "test") mongoose.connect("mongodb://localhost:27017/yummify_test_db"), {
-  useNewUrlParser: true, useFindAndModify: false
+	useNewUrlParser: true, useFindAndModify: false
 };
 else mongoose.connect(
 	process.env.MONGODB_URI || "mongodb://localhost:27017/yummify",
@@ -45,6 +45,9 @@ app.use("/static", express.static(__dirname + "public"));
 app.use(morgan(":method :url :status * :response-time ms"));
 app.use(morgan("combined"));
 //Routes
+
+//To run scripts outside of express
+app.use(cors);
 
 // app.get("/", recipesController.showPage);
 app.get("/", recipesController.getAllRecipes);

@@ -4,6 +4,17 @@
 
 const Recipe = require("../models/recipe");
 
+
+exports.getRecipeParams = (body) => {
+  return {
+    title: body.title,
+    estimatedTime: body.estimatedTime,
+    link: body.link,
+    ingredients: body.ingredients,
+    making: body.making
+  };
+};
+
 exports.getAllRecipes = (req, res) => {
   Recipe.find({})
   .exec()
@@ -67,13 +78,7 @@ exports.editRecipe = (req, res) => {
 
 exports.updateRecipe = (req, res) => {
   let recipeId = req.params.id,
-  recipeParams = {
-    title: req.body.title,
-    estimatedTime: req.body.estimatedTime,
-    link: req.body.link,
-    ingredients: req.body.ingredients,
-    making: req.body.making
-  };
+  recipeParams = this.getRecipeParams(req.body);
   Recipe.findByIdAndUpdate(recipeId, {
     $set: recipeParams
   })
@@ -87,16 +92,7 @@ exports.updateRecipe = (req, res) => {
     return [];
   })
   .then(() => {
+
     console.log("promise complete");
   });
-};
-
-exports.getRecipeParams = (body) => {
-  return {
-    title: body.title,
-    estimatedTime: body.estimatedTime,
-    link: body.link,
-    ingredients: body.ingredients,
-    making: body.making
-  };
 };
