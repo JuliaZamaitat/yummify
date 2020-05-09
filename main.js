@@ -9,13 +9,13 @@ const express = require("express"),
 	calendarController = require("./controllers/calendarController"),
 	listController = require("./controllers/listController"),
 	recipesController = require("./controllers/recipesController"),
-  morgan = require("morgan");
+	morgan = require("morgan");
 
 
 //Set up connection to database, either to test, production or local
 
 if (process.env.NODE_ENV === "test") mongoose.connect("mongodb://localhost:27017/yummify_test_db"), {
-  useNewUrlParser: true, useFindAndModify: false
+	useNewUrlParser: true, useFindAndModify: false
 };
 else mongoose.connect(
 	process.env.MONGODB_URI || "mongodb://localhost:27017/yummify",
