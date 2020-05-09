@@ -46,6 +46,9 @@ app.use(morgan(":method :url :status * :response-time ms"));
 app.use(morgan("combined"));
 //Routes
 
+//To run scripts outside of express
+app.use(cors);
+
 // app.get("/", recipesController.showPage);
 app.get("/", recipesController.getAllRecipes);
 app.get("/calendar", calendarController.showPage);

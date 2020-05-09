@@ -59,7 +59,7 @@ describe("recipesController", () => {
       testRecipe.save()
       .then( () => {
         var params = {
-          title: "Lasagne",
+          title: "Butter",
           estimatedTime: 10,
           link: "",
           ingredients: "Tomaten, Zwiebeln, Salz, Kräuter, Olivenöl, Basilikum, Zitrone, Honig",
@@ -73,26 +73,16 @@ describe("recipesController", () => {
           if (errors) console.log("Unsere Fehler:" + errors);
 
           expect(res).to.have.status(200);
-          // expect(res.body).to.be.a('object');
-          // expect(res.body).to.not.equal({});
-          // expect(errors).to.be.equal(null);
-          // expect(res.body).to.have.property('title');
-
-          // res.body.should.have.property('title');
-          // res.body.should.have.property('title').eql("Lasagne");
-
           Recipe.findById(testRecipe.id)
           .exec()
           .then((recipe) => {
-            expect(recipe).to.have.property('title').eql("Lasagne");
+            expect(recipe).to.have.property('title').eql("Butter");
+            console.log(recipe.title);
           done();
 
         });
+        });
       });
     });
-    });
-
   });
-
-
 });
