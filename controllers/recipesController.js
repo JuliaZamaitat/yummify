@@ -8,6 +8,8 @@ exports.getAllRecipes = (req, res) => {
   Recipe.find({})
   .exec()
   .then((recipes) => {
+    debugger;
+
     res.render("recipes/index", {
       recipes: recipes,
       page_name: 'Recipes'
@@ -90,4 +92,14 @@ exports.updateRecipe = (req, res) => {
   .then(() => {
     console.log("promise complete");
   });
+};
+
+exports.getRecipeParams = (body) => {
+  return {
+    title: body.title,
+    estimatedTime: body.estimatedTime,
+    link: body.link,
+    ingredients: body.ingredients,
+    making: body.making
+  };
 };
