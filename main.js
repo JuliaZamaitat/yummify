@@ -43,7 +43,7 @@ app.use(express.static("public"));
 app.use("/static", express.static(__dirname + "public"));
 //Log the request method, URL, status code and time taken to process a response
 app.use(morgan(":method :url :status * :response-time ms"));
-
+app.use(morgan("combined"));
 //Routes
 
 // app.get("/", recipesController.showPage);

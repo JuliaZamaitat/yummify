@@ -78,10 +78,7 @@ exports.updateRecipe = (req, res) => {
     $set: recipeParams
   })
   .then(recipe => {
-    res.render("recipes/show", {
-      recipe: recipe,
-      page_name: 'Recipes'
-    });
+    res.redirect(`/${recipeId}`);
     console.log(req.params.id);
     console.log(recipe);
   })
