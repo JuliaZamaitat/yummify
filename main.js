@@ -12,9 +12,12 @@ const express = require("express"),
   morgan = require("morgan");
 
 
-//Set up connection to database
+//Set up connection to database, either to test, production or local
 
-mongoose.connect(
+if (process.env.NODE_ENV === "test") mongoose.connect("mongodb://localhost:27017/yummify_test_db"), {
+  useNewUrlParser: true, useFindAndModify: false
+};
+else mongoose.connect(
 	process.env.MONGODB_URI || "mongodb://localhost:27017/yummify",
 	{ useNewUrlParser: true, useFindAndModify: false }
 );
@@ -24,7 +27,11 @@ mongoose.Promise = global.Promise;
 //Set up the required settings
 
 app.set("view engine", "ejs");
-app.set("port", process.env.PORT || 3000);
+
+//Either connect to test port or to production or to localhost
+if (process.env.NODE_ENV === "test") app.set("port", 3001);
+else app.set("port", process.env.PORT || 3000);
+
 app.use(
 	express.urlencoded({
 		extended: true
@@ -51,3 +58,5 @@ app.post("/:id", recipesController.updateRecipe);
 app.listen(app.get("port"), () => {
 	console.log(`Server running at http://localhost:${app.get("port")}`);
 });
+
+module.exports = app; //to access it from the test files
